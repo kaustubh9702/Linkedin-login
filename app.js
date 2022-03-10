@@ -31,7 +31,7 @@ function getAccessToken(){
     code=notCode.slice(65);
     console.log(code);
     secret="mIuZNcY4NZ5sY4OZ";
-    goTo="https://www.linkedin.com/oauth/v2/access_token?client_id=776gr7yjy7wd82"+"&redirect_uri="+redirectURI+"&client_secret="+secret+"&code="+code+"&scope=r_liteprofile%20r_emailaddress";
+    goTo="https://www.linkedin.com/oauth/v2/accessToken?client_id=776gr7yjy7wd82"+"&redirect_uri="+redirectURI+"&client_secret="+secret+"&code="+code+"&scope=r_liteprofile%20r_emailaddress";
     console.log(goTo);
     const token=new XMLHttpRequest();
     token.open("GET", goTo);
