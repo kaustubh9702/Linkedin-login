@@ -36,7 +36,10 @@ function getAccessToken(){
     const token=new XMLHttpRequest();
     token.open("POST", goTo);
     token.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
-    token.send();
+    token.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+           console.log(xhr.responseText);
+        }};
 
     token.onload=function(){
         if(token.status===200){
