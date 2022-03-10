@@ -2,7 +2,7 @@ pass=getSessionID();
 appID="23591652";
 redirectURI="https://kaustubh9702.github.io./Login-Twitter/redirect.html";
 function windowOpen(){
-    OGURL="https://www.twitter.com/oauth/v2/authorization="+appID+"&redirect_uri="+redirectURI+"&state="+pass;
+    OGURL="https://www.linkedin.com/oauth/v2/authorization?response_type=code&state=987654321&scope=r_liteprofile&client_id=776gr7yjy7wd82&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html";
     window.open(OGURL, "Log Into Facebook","width=500, height=500, left=200, top=50");
 }
 
@@ -93,4 +93,5 @@ function getSessionID(){
    return password;
 }
 
-// https://www.linkedin.com/oauth/v2/authorization?response_type=code&state=987654321&client_id=VTBLRXpCS05Jallib0ZwV2VSNVM6MTpjaQ&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io.%2FLogin-Twitter%2Fredirect.html
+// https://www.linkedin.com/oauth/v2/authorization?response_type=code&state=987654321&scope=r_liteprofile&client_id=776gr7yjy7wd82&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html
+// 
