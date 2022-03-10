@@ -1,8 +1,7 @@
 pass=getSessionID();
-appID="23591652";
-redirectURI="https://kaustubh9702.github.io./Login-Twitter/redirect.html";
+redirectURI="https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html";
 function windowOpen(){
-    OGURL="https://www.linkedin.com/oauth/v2/authorization?response_type=code&state=987654321&scope=r_liteprofile&client_id=776gr7yjy7wd82&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html";
+    OGURL="https://www.linkedin.com/oauth/v2/authorization?response_type=code&state=987654321&scope=r_liteprofile%20r_emailaddress&client_id=776gr7yjy7wd82&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html";
     window.open(OGURL, "Log Into Facebook","width=500, height=500, left=200, top=50");
 }
 
@@ -30,8 +29,8 @@ function getUserID(acc_token){
 function getAccessToken(){
     notCode=window.location.href;
     code=notCode.slice(59);
-    secret="8475706848c91218749a358ea6344aa3";
-    goTo="https://graph.facebook.com/v13.0/oauth/access_token?client_id="+appID+"&redirect_uri="+redirectURI+"&client_secret="+secret+"&code="+code+"&scope=email,public_profile";
+    secret="mIuZNcY4NZ5sY4OZ";
+    goTo="https://www.linkedin.com/oauth/v2/access_token?client_id="+"&redirect_uri="+redirectURI+"&client_secret="+secret+"&code="+code+"&scope=r_liteprofile%20r_emailaddress";
     const token=new XMLHttpRequest();
     token.open("GET", goTo);
     token.send();
