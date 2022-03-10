@@ -28,7 +28,7 @@ function getUserID(acc_token){
 //This function needs to be in the server side code
 function getAccessToken(){
     notCode=window.location.href;
-    code=notCode.slice(59);
+    code=notCode.slice(65);
     secret="mIuZNcY4NZ5sY4OZ";
     goTo="https://www.linkedin.com/oauth/v2/access_token?client_id="+"&redirect_uri="+redirectURI+"&client_secret="+secret+"&code="+code+"&scope=r_liteprofile%20r_emailaddress";
     const token=new XMLHttpRequest();
