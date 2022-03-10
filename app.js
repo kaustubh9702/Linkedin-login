@@ -34,12 +34,12 @@ function getAccessToken(){
     goTo="https://www.linkedin.com/uas/oauth/v2/accessToken?grant_type=authorization_code&code="+ code +"&redirect_uri=https://kaustubh9702.github.io/Linkedin-login/redirect.html&client_id=776gr7yjy7wd82&client_secret=" + secret;
     console.log(goTo);
     const token=new XMLHttpRequest();
-    token.open("GET", goTo);
+    token.open("POST", goTo);
     token.setRequestHeader("Accept", "Access-Control-Allow-Origin");
     token.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
     token.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-           console.log(xhr.responseText);
+        if (token.readyState === 4) {
+            console.log(token.responseText);
         }};
 
     token.onload=function(){
