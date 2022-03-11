@@ -36,6 +36,7 @@ function getAccessToken(){
     token.open("POST", goTo);
     token.setRequestHeader("Accept", "Access-Control-Allow-Origin");
     token.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    
     if(token.status===200){
         AccessObj=JSON.parse(token.responseText);
         AccessToken=AccessObj["access_token"];
