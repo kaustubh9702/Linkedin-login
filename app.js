@@ -36,7 +36,6 @@ function getAccessToken(){
     // window.open(goTo);
     goTo="https://www.linkedin.com/oauth/v2/accessToken";
     token.open("POST", goTo);
-    token.setRequestHeader("Content-Type", "Access-Control-Allow-Origin");
     token.onreadystatechange = function () {
         if (token.readyState === 4){
             console.log(token.responseText);
