@@ -35,7 +35,7 @@ function getAccessToken(){
     const token=new XMLHttpRequest();
     token.open("POST", goTo);
     token.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    tokemn.send();
+    token.send();
     if(token.status===200){
         AccessObj=JSON.parse(token.responseText);
         AccessToken=AccessObj["access_token"];
