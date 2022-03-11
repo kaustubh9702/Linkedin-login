@@ -36,11 +36,13 @@ function getAccessToken(){
     token.open("POST", goTo);
     token.setRequestHeader("Accept", "Access-Control-Allow-Origin");
     token.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    token.onreadystatechange = function () {
-        if (token.readyState === 4){
-            console.log(token.responseText);
-        }};
+    // token.onreadystatechange = function () {
+    //     if (token.readyState === 4){
+    //         console.log(token.responseText);
+    //     }};
     token.send(goTo);
+    AccessObj=JSON.parse(token.responseText);
+    console.log(AccessObj);
 
     token.onload=function(){
         if(token.status===200){
