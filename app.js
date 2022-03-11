@@ -31,24 +31,24 @@ function getAccessToken(){
     code=notCode.slice(65);
     console.log(code);
     secret="mIuZNcY4NZ5sY4OZ";
-    // goTo = "https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code="+ code +"&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html&client_id=776gr7yjy7wd82&client_secret=" + secret;
-    const token=new XMLHttpRequest();
-    // window.open(goTo);
-    goTo="https://www.linkedin.com/oauth/v2/accessToken";
-    token.open("POST", goTo);
-    token.onreadystatechange = function () {
-        if (token.readyState === 4){
-            console.log(token.responseText);
-        }};
-    let data = `{
-            "Content-type": "application/x-www-form-urlencoded",
-            "grant_type": "authorization_code",
-            "redirect_uri": "https://kaustubh9702.github.io/Linkedin-login/redirect.html",
-            "client_id": "776gr7yjy7wd82",
-            "client_secret": "mIuZNcY4NZ5sY4OZ"
-          }`;
+    goTo = "https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code="+ code +"&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html&client_id=776gr7yjy7wd82&client_secret=" + secret;
+    // const token=new XMLHttpRequest();
+    window.open(goTo);
+    // goTo="https://www.linkedin.com/oauth/v2/accessToken";
+    // token.open("POST", goTo);
+    // token.onreadystatechange = function () {
+    //     if (token.readyState === 4){
+    //         console.log(token.responseText);
+    //     }};
+    // let data = `{
+    //         "Content-type": "application/x-www-form-urlencoded",
+    //         "grant_type": "authorization_code",
+    //         "redirect_uri": "https://kaustubh9702.github.io/Linkedin-login/redirect.html",
+    //         "client_id": "776gr7yjy7wd82",
+    //         "client_secret": "mIuZNcY4NZ5sY4OZ"
+    //       }`;
 
-         token.send(data);
+    //      token.send(data);
     
     // token.onload=function(){
     //     if(token.status===200){
