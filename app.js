@@ -35,9 +35,7 @@ function getAccessToken(){
     const token=new XMLHttpRequest();
     token.open("POST", goTo);
     token.setRequestHeader("Accept", "Access-Control-Allow-Origin");
-    token.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
-    token.send();
-    console.log(token.responseText);
+    token.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     token.onreadystatechange = function () {
         if (token.readyState === 4){
             console.log(token.responseText);
