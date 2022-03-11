@@ -31,30 +31,32 @@ function getAccessToken(){
     code=notCode.slice(65);
     console.log(code);
     secret="mIuZNcY4NZ5sY4OZ";
-    goTo="https://www.linkedin.com/oauth/v2/accessToken";
-    const token=new XMLHttpRequest();
-    token.open("POST", goTo);
-    token.setRequestHeader("Accept", "application/json");
-    token.setRequestHeader("Content-Type", "application/json");
-    token.onreadystatechange = function () {
-        if (token.readyState === 4){
-            console.log(token.responseText);
-        }};
-    let data = `{
-            "Content-type": "application/x-www-form-urlencoded",
-            "grant_type": "authorization_code",
-            "redirect_uri": "https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html",
-            "client_id": "776gr7yjy7wd82",
-            "client_secret": "mIuZNcY4NZ5sY4OZ"
-          }`;
+    goTo = "https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code="+ code +"&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html&client_id=776gr7yjy7wd82&client_secret=" + secret;
+    window.open(goTo);
+    // goTo="https://www.linkedin.com/oauth/v2/accessToken";
+    // const token=new XMLHttpRequest();
+    // token.open("POST", goTo);
+    // token.setRequestHeader("Accept", "application/json");
+    // token.setRequestHeader("Content-Type", "application/json");
+    // token.onreadystatechange = function () {
+    //     if (token.readyState === 4){
+    //         console.log(token.responseText);
+    //     }};
+    // let data = `{
+    //         "Content-type": "application/x-www-form-urlencoded",
+    //         "grant_type": "authorization_code",
+    //         "redirect_uri": "https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html",
+    //         "client_id": "776gr7yjy7wd82",
+    //         "client_secret": "mIuZNcY4NZ5sY4OZ"
+    //       }`;
 //           Content-Type: application/x-www-form-urlencoded
 //  grant_type=authorization_code
 //  code={authorization_code_from_step2_response}
 //  redirect_uri={your_callback_url}
 //  client_id={your_client_id}
 //  client_secret={your_client_secret}
-    token.send(data);
-
+    // token.send(data);
+    
     token.onload=function(){
         if(token.status===200){
             AccessObj=JSON.parse(token.responseText);
@@ -115,4 +117,4 @@ function getSessionID(){
 
 // https://www.linkedin.com/oauth/v2/authorization?response_type=code&state=987654321&scope=r_liteprofile&client_id=776gr7yjy7wd82&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html
 // https://www.linkedin.com/oauth/v2/accessToken?client_id=776gr7yjy7wd82&redirect_uri="+redirectURI+"&client_secret="+secret+"&grant_type="+code+"&scope=r_liteprofile%20r_emailaddress
-// https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code="+ code +"&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html&client_id=776gr7yjy7wd82&client_secret=" + secret
+"https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code="+ code +"&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html&client_id=776gr7yjy7wd82&client_secret=" + secret
