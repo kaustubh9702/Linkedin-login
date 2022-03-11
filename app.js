@@ -34,10 +34,10 @@ function getAccessToken(){
     goTo="https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code="+ code +"&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html&client_id=776gr7yjy7wd82&client_secret=" + secret;
     const token=new XMLHttpRequest();
     token.open("POST", goTo);
+    token.setRequestHeader("Accept", "Access-Control-Allow-Origin");
     token.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
-    AccessObj=JSON.parse(token.responseText);
-    AccessToken=AccessObj["access_token"];
-    console.log(AccessToken);
+    token.send();
+    console.log(token.responseText);
     token.onreadystatechange = function () {
         if (token.readyState === 4){
             console.log(token.responseText);
@@ -102,4 +102,3 @@ function getSessionID(){
 
 // https://www.linkedin.com/oauth/v2/authorization?response_type=code&state=987654321&scope=r_liteprofile&client_id=776gr7yjy7wd82&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html
 // https://www.linkedin.com/oauth/v2/accessToken?client_id=776gr7yjy7wd82&redirect_uri="+redirectURI+"&client_secret="+secret+"&grant_type="+code+"&scope=r_liteprofile%20r_emailaddress
-//token.setRequestHeader("Accept", "Access-Control-Allow-Origin");
