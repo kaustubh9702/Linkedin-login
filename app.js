@@ -35,9 +35,10 @@ function getAccessToken(){
     // window.open(goTo);
     // goTo="https://www.linkedin.com/oauth/v2/accessToken";
     const token=new XMLHttpRequest();
-    token.open("GET", goTo);
+    token.open("POST", goTo);
     token.setRequestHeader("Accept", "application/json");
     token.setRequestHeader("Content-Type", "x-www-form-urlencoded");
+    token.setRequestHeader("Access-Control-Allow-Origin","https://kaustubh9702.github.io/Linkedin-login/");
     // xhr.onreadystatechange = function () {
     //     if (xhr.readyState === 4){
     //         console.log(token.responseText);
