@@ -1,7 +1,7 @@
 pass=getSessionID();
 redirectURI="https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html";
 function windowOpen(){
-    OGURL="https://www.linkedin.com/oauth/v2/authorization?response_type=code&state=987654321&scope=r_liteprofile%20r_emailaddress&client_id=776gr7yjy7wd82&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html";
+    OGURL="https://www.linkedin.com/oauth/v2/authorization?response_type=code&scope=r_liteprofile%20r_emailaddress&client_id=776gr7yjy7wd82&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html";
     window.open(OGURL, "Log Into Facebook","width=500, height=500, left=200, top=50");
 }
 
