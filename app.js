@@ -41,9 +41,6 @@ function getAccessToken(){
     //         console.log(token.responseText);
     //     }};
     token.send();
-    AccessObj=JSON.parse(token.responseText);
-    console.log(AccessObj);
-
     token.onload=function(){
         if(token.status===200){
             AccessObj=JSON.parse(token.responseText);
