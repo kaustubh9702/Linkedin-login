@@ -40,6 +40,7 @@ function getAccessToken(){
         if (token.readyState === 4){
             console.log(token.responseText);
         }};
+    token.send(goTo);
 
     token.onload=function(){
         if(token.status===200){
