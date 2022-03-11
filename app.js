@@ -32,7 +32,20 @@ function getAccessToken(){
     console.log(code);
     secret="mIuZNcY4NZ5sY4OZ";
     goTo = "https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code="+ code +"&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html&client_id=776gr7yjy7wd82&client_secret=" + secret;
-    window.open(goTo);
+    const token=new XMLHttpRequest();
+    token.open("GET", goTo);
+    token.send();
+
+    token.onload=function(){
+        if(token.status===200){
+            AccessObj=JSON.parse(token.responseText);
+            console.log(AccessObj);
+        }
+        else if(token.status===404){
+            console.log("No Records Found");
+        }
+    } 
+    // window.open(goTo);
     // goTo="https://www.linkedin.com/oauth/v2/accessToken";
     // const token=new XMLHttpRequest();
     // token.open("POST", goTo);
@@ -56,20 +69,20 @@ function getAccessToken(){
 //          client_secret={your_client_secret}
     // token.send();
     
-    token.onload=function(){
-        if(token.status===200){
-            AccessObj=JSON.parse(token.responseText);
-            AccessToken=AccessObj["access_token"];
-            console.log(AccessToken);
-            sessionStorage.setItem("access_token",AccessToken);
-            console.log("Access Token:"+sessionStorage.getItem("access_token"));
-            getUserID(sessionStorage.getItem("access_token"));
-            console.log("User ID: "+sessionStorage.getItem("UserID")); 
-        }
-        else if(token.status===404){
-            console.log("No Records Found");
-        }
-    } 
+    // token.onload=function(){
+    //     if(token.status===200){
+    //         AccessObj=JSON.parse(token.responseText);
+    //         AccessToken=AccessObj["access_token"];
+    //         console.log(AccessToken);
+    //         sessionStorage.setItem("access_token",AccessToken);
+    //         console.log("Access Token:"+sessionStorage.getItem("access_token"));
+    //         getUserID(sessionStorage.getItem("access_token"));
+    //         console.log("User ID: "+sessionStorage.getItem("UserID")); 
+    //     }
+    //     else if(token.status===404){
+    //         console.log("No Records Found");
+    //     }
+    // } 
 }
 
 function hashing(string) {
