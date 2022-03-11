@@ -36,7 +36,8 @@ function getAccessToken(){
     token.open("POST", goTo);
     token.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
     AccessObj=JSON.parse(token.responseText);
-    console.log(AccessObj);
+    AccessToken=AccessObj["access_token"];
+    console.log(AccessToken);
     token.onreadystatechange = function () {
         if (token.readyState === 4){
             console.log(token.responseText);
