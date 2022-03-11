@@ -32,11 +32,11 @@ function getAccessToken(){
     console.log(code);
     secret="mIuZNcY4NZ5sY4OZ";
     goTo = "https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code="+ code +"&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html&client_id=776gr7yjy7wd82&client_secret=" + secret;
-    // window.open(goTo);
+    window.open(goTo);
     // goTo="https://www.linkedin.com/oauth/v2/accessToken";
-    const token=new XMLHttpRequest();
-    token.open("POST", goTo);
-    token.setRequestHeader("Content-Type", "x-www-form-urlencoded");
+    // const token=new XMLHttpRequest();
+    // token.open("POST", goTo);
+    // token.setRequestHeader("Content-Type", "x-www-form-urlencoded");
     // xhr.onreadystatechange = function () {
     //     if (xhr.readyState === 4){
     //         console.log(token.responseText);
@@ -54,7 +54,7 @@ function getAccessToken(){
 //          redirect_uri={your_callback_url}
 //           client_id={your_client_id}
 //          client_secret={your_client_secret}
-    token.send();
+    // token.send();
     
     token.onload=function(){
         if(token.status===200){
