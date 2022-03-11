@@ -33,10 +33,10 @@ function getAccessToken(){
     secret="mIuZNcY4NZ5sY4OZ";
     goTo="https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code="+ code +"&redirect_uri=https%3A%2F%2Fkaustubh9702.github.io%2FLinkedin-login%2Fredirect.html&client_id=776gr7yjy7wd82&client_secret=" + secret;
     const token=new XMLHttpRequest();
-    token.open("POST", goTo);
+    token.open("GET", goTo);
     token.setRequestHeader("Accept", "Access-Control-Allow-Origin");
     token.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    
+
     if(token.status===200){
         AccessObj=JSON.parse(token.responseText);
         AccessToken=AccessObj["access_token"];
