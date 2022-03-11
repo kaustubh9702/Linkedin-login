@@ -36,8 +36,8 @@ function getAccessToken(){
     // goTo="https://www.linkedin.com/oauth/v2/accessToken";
     const token=new XMLHttpRequest();
     token.open("GET", goTo);
-    // xhr.setRequestHeader("Accept", "application/json");
-    // xhr.setRequestHeader("Content-Type", "x-www-form-urlencoded");
+    token.setRequestHeader("Accept", "application/json");
+    token.setRequestHeader("Content-Type", "x-www-form-urlencoded");
     // xhr.onreadystatechange = function () {
     //     if (xhr.readyState === 4){
     //         console.log(token.responseText);
