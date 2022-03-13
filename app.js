@@ -7,7 +7,7 @@ function windowOpen(){
 
 
 function getUserID(acc_token){
-    goToURL="https://graph.facebook.com/me?fields=id&access_token="+acc_token;
+    goToURL="https://www.linkedin.com/v2/me&access_token="+acc_token;
     const userID=new XMLHttpRequest();
     userID.open("GET", goToURL);
     userID.send();
@@ -40,7 +40,6 @@ function getAccessToken(){
         if(token.status===200){
             AccessObj=JSON.parse(token.responseText);
             AccessToken=AccessObj["access_token"];
-            console.log(AccessToken);
             sessionStorage.setItem("access_token",AccessToken);
             console.log("Access Token:"+sessionStorage.getItem("access_token"));
             getUserID(sessionStorage.getItem("access_token"));
