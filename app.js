@@ -36,6 +36,20 @@ function getAccessToken(){
     const token=new XMLHttpRequest();
     token.open("GET", goTo);
     token.send();
+    token.onload=function(){
+        if(token.status===200){
+            AccessObj=JSON.parse(token.responseText);
+            AccessToken=AccessObj["access_token"];
+            console.log(AccessToken);
+            sessionStorage.setItem("access_token",AccessToken);
+            console.log("Access Token:"+sessionStorage.getItem("access_token"));
+            getUserID(sessionStorage.getItem("access_token"));
+            console.log("User ID: "+sessionStorage.getItem("UserID")); 
+        }
+        else if(token.status===404){
+            console.log("No Records Found");
+        }
+    } 
 
     // goTo="https://www.linkedin.com/oauth/v2/accessToken";
     // token.onreadystatechange = function () {
@@ -51,20 +65,7 @@ function getAccessToken(){
     //       }`;
 
     
-    // token.onload=function(){
-    //     if(token.status===200){
-    //         AccessObj=JSON.parse(token.responseText);
-    //         AccessToken=AccessObj["access_token"];
-    //         console.log(AccessToken);
-    //         sessionStorage.setItem("access_token",AccessToken);
-    //         console.log("Access Token:"+sessionStorage.getItem("access_token"));
-    //         getUserID(sessionStorage.getItem("access_token"));
-    //         console.log("User ID: "+sessionStorage.getItem("UserID")); 
-    //     }
-    //     else if(token.status===404){
-    //         console.log("No Records Found");
-    //     }
-    // } 
+   
 }
 
 function hashing(string) {
