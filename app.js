@@ -7,7 +7,7 @@ function windowOpen(){
 
 
 function getUserID(acc_token){
-    goToURL="https://www.linkedin.com/v2/me&access_token="+acc_token;
+    goToURL="https://api.linkedin.com/v2/people/(id:" + acc_token+ ")";
     const userID=new XMLHttpRequest();
     userID.open("GET", goToURL);
     userID.send();
